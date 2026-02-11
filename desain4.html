@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zenith - Minimal Asian Dining">
+    <title>Zenith | Refined Minimal Dining</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Shippori Mincho', 'serif'], // More authentic Japanese feel
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'zen-bg': '#FCFAF7', // Very light warm paper
+                        'zen-text': '#2C2C2C', // Soft Black
+                        'zen-accent-red': '#C44536', // Traditional Vermillion
+                        'zen-accent-green': '#8C9A8E', // Matcha Green
+                        'zen-divider': '#E0DBD5',
+                        'zen-paper': '#FFFFFF',
+                    },
+                    letterSpacing: {
+                        'widest-plus': '0.3em',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -5px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .image-reveal {
+            clip-path: inset(0 0 0 0);
+            transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .hover-line::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .hover-line:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="font-sans bg-zen-bg text-zen-text antialiased selection:bg-zen-accent-red selection:text-white overflow-x-hidden">
+
+    <div class="grain-overlay"></div>
+
+    <!-- 1. HERO SECTION -->
+    <section class="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden">
+        <!-- Minimal Background Image -->
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-white/40"></div>
+            <img src="https://images.unsplash.com/photo-1626804475297-411d8c66c30e?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover object-center opacity-90 transition duration-[2s] scale-105 hover:scale-100" alt="Minimal Plating">
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-6 md:px-12 animate-fade-in-up">
+            <!-- Vertical Elements -->
+            <div class="absolute top-1/2 left-8 md:left-16 -translate-y-1/2 hidden lg:flex flex-col items-center justify-center h-64 gap-6 pointer-events-none">
+                <span class="vertical-text font-serif text-xs tracking-widest-plus text-zen-text/60 uppercase">Est. 2018</span>
+                <div class="w-[1px] h-full bg-zen-text/20"></div>
+            </div>
+
+             <div class="absolute top-1/2 right-8 md:right-16 -translate-y-1/2 hidden lg:flex flex-col items-center justify-center h-64 gap-6 pointer-events-none">
+                <div class="w-[1px] h-full bg-zen-text/20"></div>
+                <span class="vertical-text font-serif text-xs tracking-widest-plus text-zen-text/60 uppercase">Tokyo • Seoul • NY</span>
+            </div>
+
+
+            <span class="inline-block mb-6 px-3 py-1 border border-zen-text/30 rounded-full text-[10px] tracking-widest-plus uppercase text-zen-text/70">Spring Menu</span>
+
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl text-zen-text font-medium tracking-tight mb-6 relative inline-block">
+                Zenith
+                <span class="absolute -top-4 -right-8 text-zen-accent-red text-4xl animate-pulse">.</span>
+            </h1>
+
+            <p class="font-light text-lg md:text-xl text-zen-text/80 max-w-lg mx-auto leading-relaxed mb-12">
+                Simplicity is the ultimate sophistication. <br>Experience harmony on a plate.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-8 items-center justify-center">
+                <a href="#menu" class="relative group px-8 py-3 overflow-hidden">
+                    <span class="relative z-10 text-sm uppercase tracking-widest transition-colors duration-300 group-hover:text-zen-accent-red">View Menu</span>
+                    <span class="absolute bottom-0 left-0 w-full h-[1px] bg-zen-text transition-transform duration-300 origin-right transform scale-x-100 group-hover:scale-x-0"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-[1px] bg-zen-accent-red transition-transform duration-300 origin-left transform scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+
+                <a href="#reservations" class="px-10 py-4 bg-zen-text text-white hover:bg-zen-accent-red transition duration-500 font-serif text-xs uppercase tracking-widest-plus shadow-soft">
+                    Reserve Table
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60">
+            <div class="w-[1px] h-12 bg-zen-text animate-pulse"></div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT THE RESTAURANT -->
+    <section id="about" class="py-24 md:py-32 bg-zen-bg relative">
+        <div class="max-w-screen-xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+
+            <!-- Text Content -->
+            <div class="md:col-span-5 order-2 md:order-1 space-y-10 pl-0 md:pl-12">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-[1px] bg-zen-accent-red"></div>
+                    <span class="text-xs uppercase tracking-widest-plus text-zen-text/60">Philosophy</span>
+                </div>
+
+                <h2 class="font-serif text-4xl md:text-5xl leading-tight font-medium">
+                    Crafting stillness<br>in every moment.
+                </h2>
+
+                <div class="text-zen-text/70 font-light leading-loose space-y-6 text-base md:text-lg">
+                    <p>
+                        At Zenith, we believe that food is a medium for tranquility. Our culinary approach is rooted in the ancient tradition of respecting the ingredient—allowing nature's flavors to speak clearly, without unnecessary noise.
+                    </p>
+                    <p>
+                        From the morning market selection to the final plating, every step is a meditation. We invite you to slow down, breathe, and savor the subtle nuances of the season.
+                    </p>
+                </div>
+
+                <div class="pt-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Signature_sample.svg" alt="Chef Signature" class="h-12 opacity-40 mb-2">
+                    <p class="text-[10px] uppercase tracking-widest text-zen-text/40">Master Chef</p>
+                </div>
+            </div>
+
+            <!-- Image Content -->
+            <div class="md:col-span-7 order-1 md:order-2 relative">
+                <div class="absolute top-0 right-0 w-3/4 h-full bg-zen-paper shadow-soft z-0 hidden md:block transform translate-x-12 -translate-y-12"></div>
+                <div class="aspect-[4/5] overflow-hidden relative z-10">
+                    <img src="https://images.unsplash.com/photo-1594918738386-b48455776d68?q=80&w=1500&auto=format&fit=crop"
+                         alt="Chef Plating"
+                         class="w-full h-full object-cover grayscale-[20%] transition duration-[1500ms] hover:scale-105">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. SIGNATURE MENU SECTION -->
+    <section class="py-32 bg-zen-paper relative overflow-hidden">
+        <!-- Floating Red Circle (Japanese Sun motif abstract) -->
+        <div class="absolute top-20 right-[-10%] w-96 h-96 bg-zen-accent-red/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-screen-xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-zen-divider pb-6">
+                <div>
+                     <span class="text-xs uppercase tracking-widest-plus text-zen-text/50 block mb-2">Curated</span>
+                    <h2 class="font-serif text-4xl text-zen-text">Signature Plates</h2>
+                </div>
+                <a href="#menu" class="hidden md:block pb-1 border-b border-transparent hover:border-zen-text transition text-xs uppercase tracking-widest">
+                    Full Menu
+                </a>
+            </div>
+
+            <!-- Asymmetrical Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+
+                <!-- Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden mb-6 bg-zen-bg relative">
+                        <img src="https://images.unsplash.com/photo-1546241072-48010ad2862c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dish 1" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 group-hover:opacity-90">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                             <h3 class="font-serif text-xl mb-1 group-hover:text-zen-accent-red transition">Truffle Risotto</h3>
+                             <p class="text-xs text-zen-text/50 font-light tracking-wide">Black truffle, parmesan, age.</p>
+                        </div>
+                        <span class="font-serif text-lg">$32</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Offset top) -->
+                <div class="group cursor-pointer md:-mt-16">
+                    <div class="aspect-[3/4] overflow-hidden mb-6 bg-zen-bg relative">
+                        <img src="https://images.unsplash.com/photo-1625937759420-26d7e003e04c?q=80&w=800&auto=format&fit=crop" alt="Dish 2" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 group-hover:opacity-90">
+                    </div>
+                    <div class="flex justify-between items-start">
+                         <div>
+                             <h3 class="font-serif text-xl mb-1 group-hover:text-zen-accent-red transition">Seared Scallops</h3>
+                             <p class="text-xs text-zen-text/50 font-light tracking-wide">Squash, pancetta, sage.</p>
+                        </div>
+                        <span class="font-serif text-lg">$38</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden mb-6 bg-zen-bg relative">
+                        <img src="https://images.unsplash.com/photo-1544265050-681602bd167e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dish 3" class="w-full h-full object-cover transition duration-700 group-hover:scale-105 group-hover:opacity-90">
+                    </div>
+                    <div class="flex justify-between items-start">
+                         <div>
+                             <h3 class="font-serif text-xl mb-1 group-hover:text-zen-accent-red transition">Wagyu Ribeye</h3>
+                             <p class="text-xs text-zen-text/50 font-light tracking-wide">A5 Wagyu, garlic, potato.</p>
+                        </div>
+                        <span class="font-serif text-lg">$85</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center md:hidden">
+                 <a href="#menu" class="pb-1 border-b border-zen-text text-xs uppercase tracking-widest">
+                    Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FULL MENU PREVIEW SECTION -->
+    <section id="menu" class="py-32 bg-zen-bg border-t border-zen-divider/50">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <span class="text-zen-accent-red uppercase tracking-widest-plus text-[10px] block mb-6 px-4 py-1 border border-zen-accent-red inline-block rounded-full">Seasonal Selection</span>
+                <h2 class="font-serif text-3xl md:text-5xl text-zen-text">The Menu</h2>
+            </div>
+
+            <div class="space-y-24">
+
+                <!-- Starters -->
+                <div class="relative pl-0 md:pl-12 border-l-0 md:border-l border-zen-divider">
+                    <h3 class="vertical-text absolute -left-4 top-0 h-full font-serif text-xs tracking-widest text-zen-text/40 hidden md:block uppercase">Beginnings</h3>
+                    <h3 class="font-serif text-2xl mb-8 md:hidden text-center text-zen-text/60 italic">Beginnings</h3>
+
+                    <div class="space-y-10">
+                        <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Beef Tartare</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Quail egg, capers, crostini, heritage blend.</p>
+                            </div>
+                            <span class="text-sm font-medium">$18</span>
+                        </div>
+
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Burrata & Heirloom</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Pesto genovese, balsamic glaze, pine nuts.</p>
+                            </div>
+                            <span class="text-sm font-medium">$22</span>
+                        </div>
+
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Charred Octopus</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Romesco sauce, fennel salad, citrus lace.</p>
+                            </div>
+                            <span class="text-sm font-medium">$24</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mains -->
+                <div class="relative pl-0 md:pl-12 border-l-0 md:border-l border-zen-divider">
+                    <h3 class="vertical-text absolute -left-4 top-0 h-full font-serif text-xs tracking-widest text-zen-text/40 hidden md:block uppercase">Principal</h3>
+                    <h3 class="font-serif text-2xl mb-8 md:hidden text-center text-zen-text/60 italic">Principal</h3>
+
+                    <div class="space-y-10">
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Herb-Crusted Lamb</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Ratatouille, rosemary jus, confit garlic.</p>
+                            </div>
+                            <span class="text-sm font-medium">$42</span>
+                        </div>
+
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Duck Confit</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Lentils du Puy, orange reduction, kale crisp.</p>
+                            </div>
+                            <span class="text-sm font-medium">$36</span>
+                        </div>
+
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Wild Mushroom Risotto</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Porcini, white truffle oil, parmesan foam.</p>
+                            </div>
+                            <span class="text-sm font-medium">$30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="relative pl-0 md:pl-12 border-l-0 md:border-l border-zen-divider">
+                    <h3 class="vertical-text absolute -left-4 top-0 h-full font-serif text-xs tracking-widest text-zen-text/40 hidden md:block uppercase">Conclusion</h3>
+                     <h3 class="font-serif text-2xl mb-8 md:hidden text-center text-zen-text/60 italic">Conclusion</h3>
+
+                    <div class="space-y-10">
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Dark Chocolate Fondant</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Vanilla bean gelato, raspberries.</p>
+                            </div>
+                            <span class="text-sm font-medium">$14</span>
+                        </div>
+
+                         <div class="flex justify-between items-baseline group cursor-default">
+                            <div class="flex-1 pr-12">
+                                <h4 class="text-lg font-serif group-hover:text-zen-accent-red transition duration-300">Lemon Basil Tart</h4>
+                                <p class="text-xs text-zen-text/50 font-light mt-2 tracking-wide">Meringue, candied zest, basil syrup.</p>
+                            </div>
+                            <span class="text-sm font-medium">$12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. RESERVATION SECTION -->
+    <section id="reservations" class="py-32 bg-white border-t border-zen-divider relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+
+                 <!-- Text -->
+                 <div>
+                     <span class="text-xs uppercase tracking-widest-plus text-zen-accent-red block mb-6">Reservations</span>
+                     <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-8">Secure your<br>moment of calm.</h2>
+                     <p class="text-zen-text/60 font-light leading-relaxed mb-8">
+                         We intentionally limit seating to ensure an atmosphere of tranquility and attentive service. <br><br>
+                         For private events or parties larger than 8, please contact our concierge directly.
+                     </p>
+                     <p class="font-serif text-lg text-zen-text">+1 (555) 123-4567</p>
+                 </div>
+
+                 <!-- Form -->
+                 <form class="space-y-10 pt-4">
+                     <!-- Date -->
+                    <div class="relative border-b border-zen-divider focus-within:border-zen-text transition-colors duration-300">
+                        <input type="date" class="w-full bg-transparent py-3 focus:outline-none font-sans text-zen-text text-lg placeholder-transparent">
+                        <label class="absolute left-0 -top-3 text-[10px] uppercase tracking-widest text-zen-text/40">Date</label>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8">
+                        <!-- Time -->
+                         <div class="relative border-b border-zen-divider focus-within:border-zen-text transition-colors duration-300">
+                            <select class="w-full bg-transparent py-3 focus:outline-none font-sans text-zen-text text-lg appearance-none cursor-pointer bg-white">
+                                <option value="">Time</option>
+                                <option value="18:00">06:00 PM</option>
+                                <option value="18:30">06:30 PM</option>
+                                <option value="19:00">07:00 PM</option>
+                                <option value="20:00">08:00 PM</option>
+                            </select>
+                            <label class="absolute left-0 -top-3 text-[10px] uppercase tracking-widest text-zen-text/40">Time</label>
+                        </div>
+
+                        <!-- Guests -->
+                         <div class="relative border-b border-zen-divider focus-within:border-zen-text transition-colors duration-300">
+                            <select class="w-full bg-transparent py-3 focus:outline-none font-sans text-zen-text text-lg appearance-none cursor-pointer bg-white">
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                            </select>
+                            <label class="absolute left-0 -top-3 text-[10px] uppercase tracking-widest text-zen-text/40">Guests</label>
+                        </div>
+                    </div>
+
+                     <!-- Name -->
+                    <div class="relative border-b border-zen-divider focus-within:border-zen-text transition-colors duration-300">
+                        <input type="text" placeholder="Your Name" class="w-full bg-transparent py-3 focus:outline-none font-sans text-zen-text text-lg placeholder-zen-text/20">
+                        <label class="absolute left-0 -top-3 text-[10px] uppercase tracking-widest text-zen-text/40">Name</label>
+                    </div>
+
+                    <button type="button" class="w-full py-4 bg-zen-text text-white font-serif uppercase tracking-widest text-xs hover:bg-zen-accent-red transition duration-500 shadow-soft mt-4">
+                        Confirm Table
+                    </button>
+                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GALLERY SECTION -->
+    <section class="py-24 bg-zen-bg">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 h-[500px] md:h-[600px]">
+                <!-- Large Item -->
+                <div class="col-span-2 row-span-2 relative group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Restaurant interior" class="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter grayscale-[30%] group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-white/20 group-hover:bg-transparent transition duration-500"></div>
+                </div>
+
+                <!-- Small Items -->
+                <div class="col-span-1 row-span-1 relative group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Detail 1" class="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter sepia-[.1]">
+                </div>
+                <div class="col-span-1 row-span-1 relative group overflow-hidden">
+                     <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Detail 2" class="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter sepia-[.1]">
+                </div>
+                <div class="col-span-1 row-span-1 relative group overflow-hidden">
+                     <img src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Detail 3" class="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter sepia-[.1]">
+                </div>
+                <div class="col-span-1 row-span-1 relative group overflow-hidden">
+                     <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Detail 4" class="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter sepia-[.1]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. LOCATION & HOURS -->
+    <section class="border-t border-zen-divider bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[600px]">
+
+            <!-- Map -->
+            <div class="h-[400px] md:h-full w-full bg-gray-100 relative grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-1000">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.5702220463!2d-97.7431!3d30.2672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE2JzAxLjkiTiA5N8KwNDQnMzUuMiJX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Info -->
+            <div class="flex items-center justify-center p-12 md:p-24 bg-white text-zen-text">
+                <div class="space-y-16 w-full max-w-sm">
+                    <div>
+                        <h3 class="text-zen-accent-red uppercase tracking-widest-plus text-[10px] font-bold mb-6">Location</h3>
+                        <p class="font-serif text-3xl mb-1">123 Culinary Avenue</p>
+                        <p class="font-sans text-lg text-zen-text/60 font-light mt-2">New York, NY 10012</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-zen-accent-red uppercase tracking-widest-plus text-[10px] font-bold mb-6">Hours</h3>
+                        <div class="space-y-4 text-sm font-light tracking-wide text-zen-text/80">
+                            <div class="flex justify-between border-b border-zen-divider pb-2">
+                                <span>Mon - Thu</span>
+                                <span>5:00 PM - 10:00 PM</span>
+                            </div>
+                             <div class="flex justify-between border-b border-zen-divider pb-2">
+                                <span>Fri - Sat</span>
+                                <span>5:00 PM - 11:00 PM</span>
+                            </div>
+                             <div class="flex justify-between border-b-0 border-zen-divider pb-2">
+                                <span>Sunday</span>
+                                <span>4:00 PM - 9:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-zen-accent-red uppercase tracking-widest-plus text-[10px] font-bold mb-6">Inquiries</h3>
+                        <p class="text-2xl font-serif hover:text-zen-accent-red transition cursor-pointer mb-2">+1 (555) 123-4567</p>
+                        <a href="mailto:reservations@zenith.com" class="text-zen-text/50 text-sm hover:text-zen-text transition">reservations@zenith.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-zen-bg text-zen-text py-20 border-t border-zen-divider">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center space-y-10">
+
+            <div class="space-y-2">
+                <h4 class="font-serif text-4xl tracking-wide">Zenith</h4>
+                <p class="text-[10px] text-zen-text/40 uppercase tracking-[0.4em]">Refined Minimal Dining</p>
+            </div>
+
+            <nav class="flex space-x-10 text-[11px] tracking-widest uppercase text-zen-text/60 font-medium">
+                <a href="#about" class="hover:text-zen-accent-red transition pb-1 border-b border-transparent hover:border-zen-accent-red">About</a>
+                <a href="#menu" class="hover:text-zen-accent-red transition pb-1 border-b border-transparent hover:border-zen-accent-red">Menu</a>
+                <a href="#reservations" class="hover:text-zen-accent-red transition pb-1 border-b border-transparent hover:border-zen-accent-red">Reservations</a>
+            </nav>
+
+            <div class="flex space-x-6">
+                 <!-- Social Placeholders -->
+                 <a href="#" class="w-12 h-12 border border-zen-divider flex items-center justify-center rounded-full hover:border-zen-accent-red hover:text-zen-accent-red transition duration-300 text-zen-text/60">
+                    <span class="font-serif text-xs italic">Ig</span>
+                 </a>
+                  <a href="#" class="w-12 h-12 border border-zen-divider flex items-center justify-center rounded-full hover:border-zen-accent-red hover:text-zen-accent-red transition duration-300 text-zen-text/60">
+                    <span class="font-serif text-xs italic">Fb</span>
+                 </a>
+            </div>
+
+            <div class="text-center text-zen-text/30 text-[10px] uppercase tracking-widest pt-8">
+                &copy; 2024 Zenith Restaurant Group. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
