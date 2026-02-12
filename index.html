@@ -1,461 +1,682 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cinematic Restaurant Template Collection">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cinematic Restaurant Template Collection" />
     <title>Culinary Digital Collection | Premium Restaurant Templates</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
-                    },
-                    colors: {
-                        'culinary-dark': '#0a0a0a',
-                        'culinary-gold': '#c5a059',
-                        'culinary-gray': '#1a1a1a',
-                    },
-                    spacing: {
-                        '128': '32rem',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'serif'],
+            },
+            colors: {
+              'culinary-dark': '#0a0a0a',
+              'culinary-gold': '#c5a059',
+              'culinary-gray': '#1a1a1a',
+            },
+            spacing: {
+              128: '32rem',
+            },
+          },
+        },
+      }
     </script>
     <style>
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .image-hover-zoom {
-            overflow: hidden;
-        }
-        .image-hover-zoom img {
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .image-hover-zoom:hover img {
-            transform: scale(1.1);
-        }
-        .text-shadow-sm {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
+      .parallax-bg {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .image-hover-zoom {
+        overflow: hidden;
+      }
+      .image-hover-zoom img {
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .image-hover-zoom:hover img {
+        transform: scale(1.1);
+      }
+      .text-shadow-sm {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
     </style>
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-culinary-gold selection:text-white">
-
+  </head>
+  <body
+    class="bg-gray-50 text-gray-900 font-sans antialiased selection:bg-culinary-gold selection:text-white"
+  >
     <!-- 1. HERO SECTION (CINEMATIC FOOD BANNER) -->
-    <header class="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center justify-center text-center text-white">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-             <div class="absolute inset-0 bg-black/40 z-10"></div>
-             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Cinematic Food Background" class="w-full h-full object-cover animate-pulse-slow">
-        </div>
+    <header
+      class="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center justify-center text-center text-white"
+    >
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-10"
+        ></div>
+        <img
+          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+          alt="Cinematic Food Background"
+          class="w-full h-full object-cover animate-pulse-slow"
+        />
+      </div>
 
-        <div class="relative z-20 max-w-5xl px-6 animate-fade-in-up">
-            <span class="block font-serif text-xl md:text-2xl italic text-culinary-gold mb-4 tracking-wider">The Art of Digital Dining</span>
-            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight mb-8 text-shadow-sm">
-                Restaurant Web <br>Template Collection
-            </h1>
-            <p class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-12 text-gray-200">
-                A curated series of immersive digital experiences designed to showcase the artistry of your kitchen.
-            </p>
+      <div class="relative z-20 max-w-5xl px-6 animate-fade-in-up">
+        <span
+          class="block font-serif text-xl md:text-2xl italic text-culinary-gold mb-4 tracking-wider"
+          >The Art of Digital Dining</span
+        >
+        <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight mb-8 text-shadow-sm">
+          Restaurant Web <br />Template Collection
+        </h1>
+        <p
+          class="text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-12 text-gray-200"
+        >
+          A curated series of immersive digital experiences designed to showcase the artistry of
+          your kitchen.
+        </p>
 
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="#collection" class="px-10 py-4 bg-culinary-gold text-white font-serif text-lg tracking-widest hover:bg-white hover:text-culinary-dark transition duration-500 uppercase border border-transparent">
-                    Explore Collection
-                </a>
-                <a href="#gallery" class="px-10 py-4 border border-white text-white font-serif text-lg tracking-widest hover:bg-white hover:text-black transition duration-500 uppercase">
-                    View Gallery
-                </a>
-            </div>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="#collection"
+            class="px-10 py-4 bg-culinary-gold text-white font-serif text-lg tracking-widest hover:bg-white hover:text-culinary-dark transition duration-500 uppercase border border-transparent"
+          >
+            Explore Collection
+          </a>
+          <a
+            href="#gallery"
+            class="px-10 py-4 border border-white text-white font-serif text-lg tracking-widest hover:bg-white hover:text-black transition duration-500 uppercase"
+          >
+            View Gallery
+          </a>
         </div>
+      </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <svg class="w-6 h-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <svg class="w-6 h-6 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
     </header>
 
     <!-- 2. FOOD SHOWCASE STRIP -->
     <section class="py-0 relative -mt-20 z-30 px-4 md:px-0">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0">
-                <!-- Item 1 -->
-                <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8">
-                        <div>
-                            <span class="block text-white/80 text-xs tracking-widest uppercase mb-1">Concept 01</span>
-                            <h3 class="text-white font-serif text-2xl italic">Modern Bistro</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom md:mt-12">
-                     <img src="https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8">
-                         <div>
-                            <span class="block text-white/80 text-xs tracking-widest uppercase mb-1">Concept 02</span>
-                            <h3 class="text-white font-serif text-2xl italic">Fine Dining</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom">
-                     <img src="https://images.unsplash.com/photo-1594918738386-b48455776d68?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8">
-                         <div>
-                            <span class="block text-white/80 text-xs tracking-widest uppercase mb-1">Concept 03</span>
-                            <h3 class="text-white font-serif text-2xl italic">Asian Minimal</h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom md:mt-12">
-                     <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8">
-                         <div>
-                            <span class="block text-white/80 text-xs tracking-widest uppercase mb-1">Concept 04</span>
-                            <h3 class="text-white font-serif text-2xl italic">Dark Luxury</h3>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0">
+          <!-- Item 1 -->
+          <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom">
+            <img src="./images/web1-half.png" class="w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8"
+            >
+              <div>
+                <span class="block text-white/80 text-xs tracking-widest uppercase mb-1"
+                  >Concept 01</span
+                >
+                <h3 class="text-white font-serif text-2xl italic">Modern Bistro</h3>
+              </div>
             </div>
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom md:mt-12"
+          >
+            <img src="./images/web2-half.png" class="w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8"
+            >
+              <div>
+                <span class="block text-white/80 text-xs tracking-widest uppercase mb-1"
+                  >Concept 02</span
+                >
+                <h3 class="text-white font-serif text-2xl italic">Fine Dining</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom">
+            <img src="./images/web3-half.png" class="w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8"
+            >
+              <div>
+                <span class="block text-white/80 text-xs tracking-widest uppercase mb-1"
+                  >Concept 03</span
+                >
+                <h3 class="text-white font-serif text-2xl italic">Asian Minimal</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div
+            class="group relative aspect-[4/5] md:aspect-[3/4] overflow-hidden image-hover-zoom md:mt-12"
+          >
+            <img src="./images/web4-half.png" class="w-full h-full object-cover" />
+            <div
+              class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500 flex items-end p-8"
+            >
+              <div>
+                <span class="block text-white/80 text-xs tracking-widest uppercase mb-1"
+                  >Concept 04</span
+                >
+                <h3 class="text-white font-serif text-2xl italic">Dark Luxury</h3>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Intro Text -->
     <section class="py-24 md:py-32 bg-white text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="font-serif text-4xl md:text-5xl mb-8 text-culinary-dark">Crafted for Culinary Brands</h2>
-            <div class="w-16 h-[1px] bg-culinary-gold mx-auto mb-8"></div>
-            <p class="text-gray-500 leading-loose text-lg font-light">
-                Your food tells a story. Your website should be the perfect canvas.
-                Our collection of premium templates focuses on what matters most: highlighting the textures, colors, and artistry of your menu.
-                Designed for readability, impact, and conversion.
-            </p>
-        </div>
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="font-serif text-4xl md:text-5xl mb-8 text-culinary-dark">
+          Crafted for Culinary Brands
+        </h2>
+        <div class="w-16 h-[1px] bg-culinary-gold mx-auto mb-8"></div>
+        <p class="text-gray-500 leading-loose text-lg font-light">
+          Your food tells a story. Your website should be the perfect canvas. Our collection of
+          premium templates focuses on what matters most: highlighting the textures, colors, and
+          artistry of your menu. Designed for readability, impact, and conversion.
+        </p>
+      </div>
     </section>
 
     <!-- 3. DESIGN COLLECTION GRID -->
     <section id="collection" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16 md:flex justify-between items-end border-b border-gray-200 pb-6">
-                <div>
-                    <span class="text-culinary-gold uppercase tracking-widest text-xs font-bold block mb-2">The Collection</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-culinary-dark">Explore the Aesthetics</h2>
-                </div>
-                <div class="hidden md:block text-gray-400 font-serif italic text-lg">
-                    4 Distinct Visual Identities
-                </div>
-            </div>
-
-            <div class="space-y-32">
-
-                <!-- Card 1: Elegant Modern -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
-                    <div class="relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 text-xs uppercase tracking-widest font-bold">Elegant Modern</div>
-                    </div>
-                    <div class="px-4 lg:px-12">
-                        <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">Light & Sophisticated</h3>
-                        <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
-                            A refined palette of creams and golds, using classic serif typography to evoke tradition and quality.
-                            Ideal for Michelin-starred establishments, upscale bistros, and modern European dining.
-                        </p>
-
-                        <div class="flex flex-wrap gap-3 mb-10">
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Serif Type</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Clean Grid</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Gold Accents</span>
-                        </div>
-
-                        <a href="desain1.html" target="_blank" class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition">
-                            View Elegant Design
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 2: Dark Luxury -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group lg:flex-row-reverse">
-                    <div class="lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
-                        <img src="https://images.unsplash.com/photo-1544265050-681602bd167e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
-                        <div class="absolute top-6 left-6 bg-black/80 text-white backdrop-blur px-4 py-2 text-xs uppercase tracking-widest font-bold">Dark Luxury</div>
-                    </div>
-                    <div class="lg:order-1 px-4 lg:px-12 lg:text-right">
-                        <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">Moody & Immersive</h3>
-                        <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
-                            Designed for the evening. Deep charcoal backgrounds allow food photography to pop with dramatic contrast.
-                            Perfect for steakhouses, cocktail bars, and intimate dining experiences.
-                        </p>
-
-                         <div class="flex flex-wrap gap-3 mb-10 justify-start lg:justify-end">
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Dark Mode</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">High Contrast</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Dramatic</span>
-                        </div>
-
-                        <a href="desain2.html" target="_blank" class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition">
-                            View Luxury Design
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Urban Casual -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
-                    <div class="relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-2 text-xs uppercase tracking-widest font-bold">Urban Casual</div>
-                    </div>
-                    <div class="px-4 lg:px-12">
-                        <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">Bold & Energetic</h3>
-                        <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
-                            A high-energy layout with strong typography and vibrant accents.
-                            Captures the bustle of a busy kitchen. Ideal for modern bistros, burger joints, and casual eateries.
-                        </p>
-
-                        <div class="flex flex-wrap gap-3 mb-10">
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Bold Type</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Vibrant</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Social</span>
-                        </div>
-
-                        <a href="desain3.html" target="_blank" class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition">
-                            View Urban Design
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Asian Minimal -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group lg:flex-row-reverse">
-                    <div class="lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
-                        <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="w-full h-full object-cover">
-                        <div class="absolute top-6 left-6 bg-green-700 text-white px-4 py-2 text-xs uppercase tracking-widest font-bold">Asian Minimal</div>
-                    </div>
-                     <div class="lg:order-1 px-4 lg:px-12 lg:text-right">
-                        <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">Zen & Balanced</h3>
-                        <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
-                            Inspired by Japanese minimalism. Focuses on whitespace, vertical rhythm, and subtle red accents.
-                            Creates a calming atmosphere for sushi bars, omakase, and fusion dining.
-                        </p>
-
-                         <div class="flex flex-wrap gap-3 mb-10 justify-start lg:justify-end">
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Minimalist</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Whitespace</span>
-                            <span class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide">Vertical</span>
-                        </div>
-
-                        <a href="desain4.html" target="_blank" class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition">
-                            View Zen Design
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-16 md:flex justify-between items-end border-b border-gray-200 pb-6">
+          <div>
+            <span class="text-culinary-gold uppercase tracking-widest text-xs font-bold block mb-2"
+              >The Collection</span
+            >
+            <h2 class="font-serif text-4xl md:text-5xl text-culinary-dark">
+              Explore the Aesthetics
+            </h2>
+          </div>
+          <div class="hidden md:block text-gray-400 font-serif italic text-lg">
+            4 Distinct Visual Identities
+          </div>
         </div>
+
+        <div class="space-y-32">
+          <!-- Card 1: Elegant Modern -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
+            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
+              <img src="./images/hero1.png" class="w-full h-full object-cover" />
+              <div
+                class="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 text-xs uppercase tracking-widest font-bold"
+              >
+                Elegant Modern
+              </div>
+            </div>
+            <div class="px-4 lg:px-12">
+              <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">
+                Light & Sophisticated
+              </h3>
+              <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
+                A refined palette of creams and golds, using classic serif typography to evoke
+                tradition and quality. Ideal for Michelin-starred establishments, upscale bistros,
+                and modern European dining.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-10">
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Serif Type</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Clean Grid</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Gold Accents</span
+                >
+              </div>
+
+              <a
+                href="desain1.html"
+                target="_blank"
+                class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition"
+              >
+                View Elegant Design
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Dark Luxury -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group lg:flex-row-reverse"
+          >
+            <div
+              class="lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom"
+            >
+              <img
+                src="./images/hero2.png"
+                class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700"
+              />
+              <div
+                class="absolute top-6 left-6 bg-black/80 text-white backdrop-blur px-4 py-2 text-xs uppercase tracking-widest font-bold"
+              >
+                Dark Luxury
+              </div>
+            </div>
+            <div class="lg:order-1 px-4 lg:px-12 lg:text-right">
+              <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">
+                Moody & Immersive
+              </h3>
+              <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
+                Designed for the evening. Deep charcoal backgrounds allow food photography to pop
+                with dramatic contrast. Perfect for steakhouses, cocktail bars, and intimate dining
+                experiences.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-10 justify-start lg:justify-end">
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Dark Mode</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >High Contrast</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Dramatic</span
+                >
+              </div>
+
+              <a
+                href="desain2.html"
+                target="_blank"
+                class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition"
+              >
+                View Luxury Design
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Urban Casual -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
+            <div class="relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom">
+              <img src="./images/hero3.png" class="w-full h-full object-cover" />
+              <div
+                class="absolute top-6 left-6 bg-orange-600 text-white px-4 py-2 text-xs uppercase tracking-widest font-bold"
+              >
+                Urban Casual
+              </div>
+            </div>
+            <div class="px-4 lg:px-12">
+              <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">
+                Bold & Energetic
+              </h3>
+              <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
+                A high-energy layout with strong typography and vibrant accents. Captures the bustle
+                of a busy kitchen. Ideal for modern bistros, burger joints, and casual eateries.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-10">
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Bold Type</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Vibrant</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Social</span
+                >
+              </div>
+
+              <a
+                href="desain3.html"
+                target="_blank"
+                class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition"
+              >
+                View Urban Design
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Asian Minimal -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group lg:flex-row-reverse"
+          >
+            <div
+              class="lg:order-2 relative aspect-[4/3] overflow-hidden shadow-2xl image-hover-zoom"
+            >
+              <img src="./images/hero4.png" class="w-full h-full object-cover" />
+              <div
+                class="absolute top-6 left-6 bg-green-700 text-white px-4 py-2 text-xs uppercase tracking-widest font-bold"
+              >
+                Asian Minimal
+              </div>
+            </div>
+            <div class="lg:order-1 px-4 lg:px-12 lg:text-right">
+              <h3 class="font-serif text-4xl md:text-5xl text-culinary-dark mb-6">
+                Zen & Balanced
+              </h3>
+              <p class="text-gray-500 mb-8 leading-relaxed font-light text-lg">
+                Inspired by Japanese minimalism. Focuses on whitespace, vertical rhythm, and subtle
+                red accents. Creates a calming atmosphere for sushi bars, omakase, and fusion
+                dining.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-10 justify-start lg:justify-end">
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Minimalist</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Whitespace</span
+                >
+                <span
+                  class="px-3 py-1 border border-gray-200 text-xs text-gray-500 uppercase tracking-wide"
+                  >Vertical</span
+                >
+              </div>
+
+              <a
+                href="desain4.html"
+                target="_blank"
+                class="inline-block border-b border-culinary-dark pb-1 text-culinary-dark uppercase tracking-widest text-sm hover:text-culinary-gold hover:border-culinary-gold transition"
+              >
+                View Zen Design
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 4. SECTION VISUAL PREVIEW -->
     <section class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
-            <span class="text-culinary-gold uppercase tracking-widest text-xs font-bold block mb-4">Component Library</span>
-            <h2 class="font-serif text-4xl text-culinary-dark">Layouts Designed for Dining</h2>
-        </div>
+      <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <span class="text-culinary-gold uppercase tracking-widest text-xs font-bold block mb-4"
+          >Component Library</span
+        >
+        <h2 class="font-serif text-4xl text-culinary-dark">Layouts Designed for Dining</h2>
+      </div>
 
-        <div class="overflow-x-auto pb-8 hide-scrollbar">
-            <div class="flex px-6 space-x-6 min-w-max">
-
-                <!-- Menu Preview -->
-                <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
-                     <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                     <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-                         <span class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs">Menu Layouts</span>
-                     </div>
-                </div>
-
-                <!-- Reservation Preview -->
-                 <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
-                     <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-                         <span class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs">Reservation Forms</span>
-                     </div>
-                </div>
-
-                <!-- Gallery Preview -->
-                 <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
-                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-                         <span class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs">Interior Galleries</span>
-                     </div>
-                </div>
-
-                <!-- Mobile Preview -->
-                 <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
-                     <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500">
-                      <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500">
-                         <span class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs">Mobile Responsive</span>
-                     </div>
-                </div>
-
+      <div class="overflow-x-auto pb-8 hide-scrollbar">
+        <div class="flex px-6 space-x-6 min-w-max">
+          <!-- Menu Preview -->
+          <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500"
+            >
+              <span
+                class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs"
+                >Menu Layouts</span
+              >
             </div>
+          </div>
+
+          <!-- Reservation Preview -->
+          <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500"
+            >
+              <span
+                class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs"
+                >Reservation Forms</span
+              >
+            </div>
+          </div>
+
+          <!-- Gallery Preview -->
+          <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500"
+            >
+              <span
+                class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs"
+                >Interior Galleries</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Preview -->
+          <div class="w-[400px] h-[300px] relative group overflow-hidden bg-gray-100">
+            <img
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500"
+            >
+              <span
+                class="text-white border border-white px-6 py-2 uppercase tracking-widest text-xs"
+                >Mobile Responsive</span
+              >
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- 5. FOOD GALLERY MOSAIC -->
     <section id="gallery" class="py-2 bg-black">
-        <div class="grid grid-cols-2 md:grid-cols-4 aspect-[2/1]">
-            <div class="col-span-1 row-span-2 overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700">
-            </div>
-            <div class="col-span-1 row-span-1 overflow-hidden relative group">
-                 <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700">
-            </div>
-            <div class="col-span-1 row-span-1 overflow-hidden relative group">
-                 <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0d6b21?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700">
-            </div>
-             <div class="col-span-1 row-span-2 overflow-hidden relative group">
-                 <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700">
-            </div>
-             <div class="col-span-2 row-span-1 overflow-hidden relative group">
-                 <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700">
-            </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 aspect-[2/1]">
+        <div class="col-span-1 row-span-2 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700"
+          />
         </div>
+        <div class="col-span-1 row-span-1 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700"
+          />
+        </div>
+        <div class="col-span-1 row-span-1 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700"
+          />
+        </div>
+        <div class="col-span-1 row-span-2 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700"
+          />
+        </div>
+        <div class="col-span-2 row-span-1 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=1200&q=80"
+            class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition duration-700"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- 6. FEATURES -->
     <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                 <h2 class="font-serif text-4xl text-culinary-dark">One System. Multiple Culinary Identities.</h2>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center bg-gray-50 p-12 lg:p-16">
-                <div class="space-y-4">
-                    <div class="text-3xl text-culinary-gold">📱</div>
-                    <h3 class="font-bold text-gray-900">Fully Responsive</h3>
-                    <p class="text-gray-500 text-sm">Flawless on every device.</p>
-                </div>
-                 <div class="space-y-4">
-                    <div class="text-3xl text-culinary-gold">⚡</div>
-                    <h3 class="font-bold text-gray-900">Tailwind CSS</h3>
-                    <p class="text-gray-500 text-sm">Modern utility-first styling.</p>
-                </div>
-                 <div class="space-y-4">
-                    <div class="text-3xl text-culinary-gold">📅</div>
-                    <h3 class="font-bold text-gray-900">Reservation Ready</h3>
-                    <p class="text-gray-500 text-sm">Integrated booking forms.</p>
-                </div>
-                 <div class="space-y-4">
-                    <div class="text-3xl text-culinary-gold">📷</div>
-                    <h3 class="font-bold text-gray-900">Gallery Included</h3>
-                    <p class="text-gray-500 text-sm">Showcase your ambiance.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="font-serif text-4xl text-culinary-dark">
+            One System. Multiple Culinary Identities.
+          </h2>
         </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center bg-gray-50 p-12 lg:p-16">
+          <div class="space-y-4">
+            <div class="text-3xl text-culinary-gold">📱</div>
+            <h3 class="font-bold text-gray-900">Fully Responsive</h3>
+            <p class="text-gray-500 text-sm">Flawless on every device.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-3xl text-culinary-gold">⚡</div>
+            <h3 class="font-bold text-gray-900">Tailwind CSS</h3>
+            <p class="text-gray-500 text-sm">Modern utility-first styling.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-3xl text-culinary-gold">📅</div>
+            <h3 class="font-bold text-gray-900">Reservation Ready</h3>
+            <p class="text-gray-500 text-sm">Integrated booking forms.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="text-3xl text-culinary-gold">📷</div>
+            <h3 class="font-bold text-gray-900">Gallery Included</h3>
+            <p class="text-gray-500 text-sm">Showcase your ambiance.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 7. COMPARISON TABLE -->
     <section class="py-24 bg-white border-t border-gray-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="font-serif text-3xl text-center mb-12">Compare the Restaurant Styles</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse text-sm text-gray-600">
-                    <thead>
-                        <tr class="border-b border-gray-200">
-                            <th class="py-4 px-6 font-bold uppercase tracking-wide text-xs">Feature</th>
-                            <th class="py-4 px-6 text-center font-serif text-lg text-black">Modern</th>
-                            <th class="py-4 px-6 text-center font-serif text-lg text-black">Luxury</th>
-                            <th class="py-4 px-6 text-center font-serif text-lg text-black">Urban</th>
-                            <th class="py-4 px-6 text-center font-serif text-lg text-black">Minimal</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100">
-                        <tr>
-                            <td class="py-4 px-6 font-medium">Visual Mood</td>
-                            <td class="text-center py-4">Light & Airy</td>
-                            <td class="text-center py-4">Dark & Moody</td>
-                            <td class="text-center py-4">Bold & Vibrant</td>
-                            <td class="text-center py-4">Calm & Zen</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium">Dark Theme</td>
-                            <td class="text-center py-4 opacity-20">—</td>
-                            <td class="text-center py-4 text-culinary-gold font-bold">●</td>
-                            <td class="text-center py-4 opacity-20">—</td>
-                            <td class="text-center py-4 opacity-20">—</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium">Menu Style</td>
-                            <td class="text-center py-4">Classic List</td>
-                            <td class="text-center py-4">Immersive</td>
-                            <td class="text-center py-4">Grid Layout</td>
-                            <td class="text-center py-4">Minimalist</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-6 font-medium">Ideal For</td>
-                            <td class="text-center py-4">Fine Dining</td>
-                            <td class="text-center py-4">Bar / Steakhouse</td>
-                            <td class="text-center py-4">Cafe / Bistro</td>
-                            <td class="text-center py-4">Sushi / Fusion</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="font-serif text-3xl text-center mb-12">Compare the Restaurant Styles</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm text-gray-600">
+            <thead>
+              <tr class="border-b border-gray-200">
+                <th class="py-4 px-6 font-bold uppercase tracking-wide text-xs">Feature</th>
+                <th class="py-4 px-6 text-center font-serif text-lg text-black">Modern</th>
+                <th class="py-4 px-6 text-center font-serif text-lg text-black">Luxury</th>
+                <th class="py-4 px-6 text-center font-serif text-lg text-black">Urban</th>
+                <th class="py-4 px-6 text-center font-serif text-lg text-black">Minimal</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="py-4 px-6 font-medium">Visual Mood</td>
+                <td class="text-center py-4">Light & Airy</td>
+                <td class="text-center py-4">Dark & Moody</td>
+                <td class="text-center py-4">Bold & Vibrant</td>
+                <td class="text-center py-4">Calm & Zen</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-medium">Dark Theme</td>
+                <td class="text-center py-4 opacity-20">—</td>
+                <td class="text-center py-4 text-culinary-gold font-bold">●</td>
+                <td class="text-center py-4 opacity-20">—</td>
+                <td class="text-center py-4 opacity-20">—</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-medium">Menu Style</td>
+                <td class="text-center py-4">Classic List</td>
+                <td class="text-center py-4">Immersive</td>
+                <td class="text-center py-4">Grid Layout</td>
+                <td class="text-center py-4">Minimalist</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 font-medium">Ideal For</td>
+                <td class="text-center py-4">Fine Dining</td>
+                <td class="text-center py-4">Bar / Steakhouse</td>
+                <td class="text-center py-4">Cafe / Bistro</td>
+                <td class="text-center py-4">Sushi / Fusion</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </section>
 
     <!-- 8. FINAL CTA -->
-    <section class="relative py-40 flex items-center justify-center text-center text-white bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1424847651672-bf202175b04a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');">
-        <div class="absolute inset-0 bg-black/70"></div>
-        <div class="relative z-10 max-w-4xl px-6">
-            <h2 class="font-serif text-4xl md:text-6xl mb-8 leading-tight">Choose the Design That <br>Elevates Your Culinary Brand</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="desain1.html" class="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition">Preview Modern</a>
-                <a href="desain2.html" class="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition">Preview Luxury</a>
-                <a href="desain3.html" class="px-8 py-4 bg-orange-600 text-white font-bold uppercase tracking-widest text-xs hover:bg-orange-700 transition border border-transparent">Preview Urban</a>
-                <a href="desain4.html" class="px-8 py-4 bg-green-700 text-white font-bold uppercase tracking-widest text-xs hover:bg-green-800 transition border border-transparent">Preview Minimal</a>
-            </div>
+    <section
+      class="relative py-40 flex items-center justify-center text-center text-white bg-fixed bg-center bg-cover"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1543353071-10c8ba85a904?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 max-w-4xl px-6">
+        <h2 class="font-serif text-4xl md:text-6xl mb-8 leading-tight">
+          Choose the Design That <br />Elevates Your Culinary Brand
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="desain1.html"
+            class="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition"
+            >Preview Modern</a
+          >
+          <a
+            href="desain2.html"
+            class="px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-black transition"
+            >Preview Luxury</a
+          >
+          <a
+            href="desain3.html"
+            class="px-8 py-4 bg-orange-600 text-white font-bold uppercase tracking-widest text-xs hover:bg-orange-700 transition border border-transparent"
+            >Preview Urban</a
+          >
+          <a
+            href="desain4.html"
+            class="px-8 py-4 bg-green-700 text-white font-bold uppercase tracking-widest text-xs hover:bg-green-800 transition border border-transparent"
+            >Preview Minimal</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- 9. FOOTER -->
     <footer class="bg-culinary-dark text-white pt-24 pb-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h3 class="font-serif text-3xl mb-4 italic">Culinary Collection</h3>
-            <p class="text-gray-500 max-w-md mx-auto mb-12 font-light">
-                Premium digital templates crafted for the modern restaurateur.
-            </p>
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="font-serif text-3xl mb-4 italic">Culinary Collection</h3>
+        <p class="text-gray-500 max-w-md mx-auto mb-12 font-light">
+          Premium digital templates crafted for the modern restaurateur.
+        </p>
 
-            <div class="flex justify-center space-x-8 text-xs uppercase tracking-widest text-gray-400 mb-16">
-                <a href="#" class="hover:text-white transition">Collection</a>
-                <a href="#" class="hover:text-white transition">Support</a>
-                <a href="#" class="hover:text-white transition">License</a>
-            </div>
-
-            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-600">
-                &copy; 2024 Culinary Template Collection. All rights reserved.
-            </div>
+        <div
+          class="flex justify-center space-x-8 text-xs uppercase tracking-widest text-gray-400 mb-16"
+        >
+          <a href="#" class="hover:text-white transition">Collection</a>
+          <a href="#" class="hover:text-white transition">Support</a>
+          <a href="#" class="hover:text-white transition">License</a>
         </div>
-    </footer>
 
-</body>
+        <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-600 space-y-3">
+          <p>&copy; 2024 Culinary Template Collection. All rights reserved.</p>
+          <p class="tracking-wide">
+            Crafted by
+            <a href="https://codelightning.com" class="text-gray-400 hover:text-white transition">
+              Code Lightning
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
